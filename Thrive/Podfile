@@ -1,0 +1,5 @@
+target 'Thrive' do
+    pod 'IQKeyboardManagerSwift'
+    
+    use_frameworks!
+end
