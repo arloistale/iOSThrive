@@ -12,7 +12,7 @@ class JournalTableViewController: UITableViewController {
     
     // MARK: Properties
     
-    var journalEntries = [JournalEntry]()
+    private var journalEntries = [JournalEntry]()
 
     // MARK: Initialization
     
@@ -47,7 +47,11 @@ class JournalTableViewController: UITableViewController {
 
         let entry = journalEntries[indexPath.row]
         cell.photoImageView.image = entry.photo
-        cell.messageLabel.text = entry.message
+        cell.dateLabel.text = entry.getDateString()
+        let moodImage = entry.getMoodImage().imageWithRenderingMode(.AlwaysTemplate)
+        cell.emoticonImageView.image = moodImage
+        cell.emoticonImageView.tintColor = entry.getMoodColor()
+        cell.messageTextView.text = entry.message
 
         return cell
     }

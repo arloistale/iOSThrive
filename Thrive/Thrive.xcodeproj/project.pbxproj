@@ -14,6 +14,7 @@
 		221CD0671C55CAA2007B6E58 /* ThriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CD0661C55CAA2007B6E58 /* ThriveTests.swift */; };
 		221CD0721C55CAA2007B6E58 /* ThriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CD0711C55CAA2007B6E58 /* ThriveUITests.swift */; };
 		222F91581C67E2CB000EC3AA /* JournalEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 222F91571C67E2CB000EC3AA /* JournalEntryViewController.swift */; };
+		224FC7111C7395270080215C /* FlickrSearcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224FC7101C7395270080215C /* FlickrSearcher.swift */; };
 		225DCC1D1C58BDC100FA3716 /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DCC1C1C58BDC100FA3716 /* JournalTableViewCell.swift */; };
 		225DCC1E1C58BDC100FA3716 /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DCC1C1C58BDC100FA3716 /* JournalTableViewCell.swift */; };
 		225DCC1F1C58BDC100FA3716 /* JournalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DCC1C1C58BDC100FA3716 /* JournalTableViewCell.swift */; };
@@ -23,6 +24,9 @@
 		225DCC251C58CA1900FA3716 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DCC241C58CA1900FA3716 /* JournalEntry.swift */; };
 		225DCC261C58CA1900FA3716 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DCC241C58CA1900FA3716 /* JournalEntry.swift */; };
 		225DCC271C58CA1900FA3716 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 225DCC241C58CA1900FA3716 /* JournalEntry.swift */; };
+		22747DDD1C73F284002BEB19 /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22747DDC1C73F284002BEB19 /* CardCollectionViewCell.swift */; };
+		227F269F1C7AD9E7009A349A /* UIColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227F269E1C7AD9E7009A349A /* UIColorUtils.swift */; };
+		22ABA6931C733C5A00BDAEAE /* CardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABA6921C733C5A00BDAEAE /* CardCollectionViewController.swift */; };
 		22B123A01C684D4800A7018E /* MoodControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1239F1C684D4800A7018E /* MoodControl.swift */; };
 		B27125282E9AADEABB7A4BFA /* Pods_Thrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479B3C9A3FA5E50B6738C89F /* Pods_Thrive.framework */; };
 /* End PBXBuildFile section */
@@ -58,9 +62,13 @@
 		221CD0711C55CAA2007B6E58 /* ThriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThriveUITests.swift; sourceTree = "<group>"; };
 		221CD0731C55CAA2007B6E58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		222F91571C67E2CB000EC3AA /* JournalEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntryViewController.swift; sourceTree = "<group>"; };
+		224FC7101C7395270080215C /* FlickrSearcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlickrSearcher.swift; sourceTree = "<group>"; };
 		225DCC1C1C58BDC100FA3716 /* JournalTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalTableViewCell.swift; sourceTree = "<group>"; };
 		225DCC201C58C96000FA3716 /* JournalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalTableViewController.swift; sourceTree = "<group>"; };
 		225DCC241C58CA1900FA3716 /* JournalEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		22747DDC1C73F284002BEB19 /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		227F269E1C7AD9E7009A349A /* UIColorUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorUtils.swift; sourceTree = "<group>"; };
+		22ABA6921C733C5A00BDAEAE /* CardCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewController.swift; sourceTree = "<group>"; };
 		22B1239F1C684D4800A7018E /* MoodControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodControl.swift; sourceTree = "<group>"; };
 		317E54C5A88E784BD3F1F51A /* Pods-Thrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thrive/Pods-Thrive.debug.xcconfig"; sourceTree = "<group>"; };
 		46DB3C52162CFDEE70AE75B6 /* Pods-Thrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thrive.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thrive/Pods-Thrive.release.xcconfig"; sourceTree = "<group>"; };
@@ -123,11 +131,15 @@
 				221CD0581C55CAA2007B6E58 /* Assets.xcassets */,
 				221CD05A1C55CAA2007B6E58 /* LaunchScreen.storyboard */,
 				221CD05D1C55CAA2007B6E58 /* Info.plist */,
+				224FC7101C7395270080215C /* FlickrSearcher.swift */,
 				225DCC1C1C58BDC100FA3716 /* JournalTableViewCell.swift */,
 				225DCC201C58C96000FA3716 /* JournalTableViewController.swift */,
 				225DCC241C58CA1900FA3716 /* JournalEntry.swift */,
 				222F91571C67E2CB000EC3AA /* JournalEntryViewController.swift */,
 				22B1239F1C684D4800A7018E /* MoodControl.swift */,
+				22ABA6921C733C5A00BDAEAE /* CardCollectionViewController.swift */,
+				22747DDC1C73F284002BEB19 /* CardCollectionViewCell.swift */,
+				227F269E1C7AD9E7009A349A /* UIColorUtils.swift */,
 			);
 			path = Thrive;
 			sourceTree = "<group>";
@@ -349,12 +361,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22ABA6931C733C5A00BDAEAE /* CardCollectionViewController.swift in Sources */,
+				227F269F1C7AD9E7009A349A /* UIColorUtils.swift in Sources */,
 				221CD0521C55CAA2007B6E58 /* AppDelegate.swift in Sources */,
 				222F91581C67E2CB000EC3AA /* JournalEntryViewController.swift in Sources */,
 				225DCC251C58CA1900FA3716 /* JournalEntry.swift in Sources */,
 				225DCC211C58C96000FA3716 /* JournalTableViewController.swift in Sources */,
 				225DCC1D1C58BDC100FA3716 /* JournalTableViewCell.swift in Sources */,
 				22B123A01C684D4800A7018E /* MoodControl.swift in Sources */,
+				22747DDD1C73F284002BEB19 /* CardCollectionViewCell.swift in Sources */,
+				224FC7111C7395270080215C /* FlickrSearcher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

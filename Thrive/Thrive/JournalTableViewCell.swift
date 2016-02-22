@@ -11,8 +11,10 @@ import UIKit
 class JournalTableViewCell: UITableViewCell {
     
     // MARK: Properties
-    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var messageTextView: UITextView!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var emoticonImageView: UIImageView!
     
     // MARK: Initialization
 

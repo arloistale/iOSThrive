@@ -12,17 +12,31 @@ class MoodControl: UIView {
     
     // MARK: Properties
     
-    var selectedMood = 0
-    var moodButtons = [UIButton]()
+    private var selectedMood = 0 {
+        didSet {
+            setNeedsLayout()
+        }
+    }
+    
+    private var moodButtons = [UIButton]()
+    
+    private var buttonSpacing = 5
     
     // MARK: Initialization
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        for _ in JournalEntry.MoodType.values {
+        for (index, mood) in JournalEntry.MoodType.values.enumerate() {
+            let normalImage = UIImage(named: mood.rawValue)
+            let tintedImage = normalImage?.imageWithRenderingMode(.AlwaysTemplate)
+            
             let button = UIButton()
-            button.backgroundColor = UIColor.redColor()
+            button.setImage(tintedImage, forState: .Normal)
+            button.setImage(tintedImage, forState: .Selected)
+            button.setImage(tintedImage, forState: [.Highlighted, .Selected])
+            button.tintColor = JournalEntry.MoodType.colors[index]
+            button.set
             button.addTarget(self, action: "moodButtonPressed:", forControlEvents: .TouchDown)
             moodButtons += [button]
             addSubview(button)
@@ -35,9 +49,11 @@ class MoodControl: UIView {
         var buttonFrame = CGRect(x: 0, y: 0, width: buttonSize, height: buttonSize)
         
         for (index, button) in moodButtons.enumerate() {
-            buttonFrame.origin.x = CGFloat(index * (buttonSize + 5))
+            buttonFrame.origin.x = CGFloat(index * (buttonSize + buttonSpacing))
             button.frame = buttonFrame
         }
+        
+        moodButtons[selectedMood].selected = true
     }
 
     override func intrinsicContentSize() -> CGSize {
@@ -50,6 +66,17 @@ class MoodControl: UIView {
     // MARK: Button Actions
     
     func moodButtonPressed(button: UIButton) {
-        print("yay")
+        // unselect previously selected button
+        moodButtons[selectedMood].selected = false
+        
+        // select new button
+        selectedMood = moodButtons.indexOf(button)!
+        button.selected = true;
+    }
+    
+    // MARK: Getters
+    
+    func getSelectedMoodIndex() -> Int {
+        return selectedMood
     }
 }

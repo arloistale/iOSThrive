@@ -12,12 +12,13 @@ class JournalEntryViewController: UIViewController, UITextViewDelegate, UIImageP
     
     // MARK: Constants
     
-    let placeholderText = "Write a message to her..."
+    private let placeholderText = "Write a message to her..."
     
     // MARK: Properties
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var messageTextView: UITextView!
+    @IBOutlet weak var moodControl: MoodControl!
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -56,13 +57,24 @@ class JournalEntryViewController: UIViewController, UITextViewDelegate, UIImageP
 
     // MARK: Navigation
     
+    @IBAction func cancel(sender: AnyObject) {
+        let isPresentingInAddMode = presentingViewController is UINavigationController
+        if isPresentingInAddMode {
+            dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            navigationController!.popViewControllerAnimated(true)
+        }
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if sender === saveButton {
             let message = messageTextView.text ?? ""
             let photo = imageView.image
+            let date = NSDate()
+            let moodIndex = moodControl.getSelectedMoodIndex()
             
             // passed to table view
-            journalEntry = JournalEntry(message: message, photo: photo)
+            journalEntry = JournalEntry(date: date, message: message, moodIndex: moodIndex, photo: photo)
         }
     }
     
