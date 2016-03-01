@@ -36,7 +36,7 @@ class MoodControl: UIView {
             button.setImage(tintedImage, forState: .Selected)
             button.setImage(tintedImage, forState: [.Highlighted, .Selected])
             button.tintColor = JournalEntry.MoodType.colors[index]
-            button.set
+            
             button.addTarget(self, action: "moodButtonPressed:", forControlEvents: .TouchDown)
             moodButtons += [button]
             addSubview(button)
