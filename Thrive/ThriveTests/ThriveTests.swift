@@ -24,12 +24,31 @@ class ThriveTests: XCTestCase {
     // MARK: JournalEntry Tests
     func testJournalEntryInitialization() {
         // expected success
-        let potentialEntry = JournalEntry(message: "Test Title", photo: nil)
-        XCTAssertNotNil(potentialEntry)
-        XCTAssertEqual(NSDate(), potentialEntry?.date)
+        let optNil = JournalEntry(date: NSDate(), moodIndex: 0, message: nil, photo: nil)
         
         // expected failure
-        let noTitle = JournalEntry(message: "", photo: nil)
-        XCTAssertNil(noTitle, "Empty journal entry title must be invalid")
+        let moodLow = JournalEntry(date: NSDate(), moodIndex: -1, message: "LOw", photo: nil)
+        let moodHigh = JournalEntry(date: NSDate(), moodIndex: 10000, message: "High", photo: nil)
+        
+        XCTAssertNotNil(optNil, "Opt nil entry must be valid")
+        XCTAssertEqual(NSDate(), optNil?.date)
+        
+        XCTAssertNil(moodLow, "Mood low entry must be invalid")
+        XCTAssertNil(moodHigh, "Mood high entry must be invalid")
+    }
+    
+    func testCardInitialization() {
+        // success
+        let optNil = Card(date: NSDate(), moodIndex: 0, message: nil, photo: nil)
+        
+        // failure
+        let moodLow = Card(date: NSDate(), moodIndex: -1, message: "LOw", photo: nil)
+        let moodHigh = Card(date: NSDate(), moodIndex: 10000, message: "High", photo: nil)
+        
+        XCTAssertNotNil(optNil, "Opt nil card must be valid")
+        XCTAssertEqual(NSDate(), optNil?.date)
+        
+        XCTAssertNil(moodLow, "Mood low card must be invalid")
+        XCTAssertNil(moodHigh, "Mood high card must be invalid")
     }
 }

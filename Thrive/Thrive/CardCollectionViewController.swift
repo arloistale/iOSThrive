@@ -13,10 +13,10 @@ private let reuseIdentifier = "CardCell"
 class CardCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
     // FlickrSearch
-    private var searches = [FlickrSearchResults]()
-    private let flickr = Flickr()
+    private var searches = [Card]()
+    private let api = APIController()
     
-    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    private let numColumns = 1
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,12 +24,10 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
-        // Register cell classes
-        //self.collectionView!.registerClass(CardCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
         // Do any additional setup after loading the view.
         
         // dummy query
+        /*
         flickr.searchFlickrForTerm("cats dogs", completion: {
             results, error in
             
@@ -42,6 +40,28 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
                 
                 self.searches.insert(results!, atIndex: 0)
                 self.collectionView?.reloadData()
+            }
+        })*/
+        
+        api.searchCards(50, completionHandler: {
+            (err, results) in
+            
+            print("Error: \(err)")
+            print("Results: ")
+            
+            if err != nil {
+                print("Card fetch failed: \(err)")
+            } else {
+                guard let cards = results else {
+                    print("Invalid cards received from fetch")
+                    return
+                }
+                
+                self.searches = cards
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.collectionView?.reloadData()
+                }
             }
         })
     }
@@ -64,12 +84,13 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
     // MARK: UICollectionViewDataSource
 
     override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return searches.count
+        print(searches.count)
+        return searches.count / numColumns
     }
 
 
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return searches[section].searchResults.count
+        return numColumns
     }
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -77,9 +98,15 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! CardCollectionViewCell
     
         // Configure the cell
-        let cardPhoto = photoForIndexPath(indexPath)
-        cell.backgroundColor = UIColor.blackColor()
-        cell.photoImageView.image = cardPhoto.thumbnail
+        let card = cardForIndexPath(indexPath)
+        cell.backgroundColor = UIColor(colorLiteralRed: 0.933, green: 0.933, blue: 0.933, alpha: 1)
+        if let message = card.message {
+            cell.messageTextView.text = message
+        }
+        
+        //cell.photoImageView.image = cardPhoto.thumbnail
+        cell.photoImageView.layer.borderWidth = 1.0
+        cell.photoImageView.layer.borderColor = UIColor.grayColor().CGColor
         
         return cell
     }
@@ -88,20 +115,20 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
         
-        let cardPhoto = photoForIndexPath(indexPath);
+        let card = cardForIndexPath(indexPath);
         
-        if var size = cardPhoto.thumbnail?.size {
+        if var size = card.thumbnail?.size {
             size.width += 10
             size.height += 10
             return size
         }
         
-        return CGSize(width: 100, height: 100)
+        return CGSize(width: 200, height: 250)
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
         
-        return sectionInsets
+        return UIEdgeInsets(top: 20, left: 100, bottom: 20, right: 100)
     }
 
     // MARK: UICollectionViewDelegate
@@ -137,9 +164,9 @@ class CardCollectionViewController: UICollectionViewController, UICollectionView
 
     // MARK: Helpers
     
-    func photoForIndexPath(indexPath: NSIndexPath) -> FlickrPhoto {
-        return searches[indexPath.section].searchResults[indexPath.row]
+    func cardForIndexPath(indexPath: NSIndexPath) -> Card {
+        let search = searches[indexPath.section * numColumns + indexPath.row]
+        return search
     }
 }
-
 

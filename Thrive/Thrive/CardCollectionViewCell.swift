@@ -11,5 +11,6 @@ import UIKit
 class CardCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var messageTextView: UITextView!
     
 }

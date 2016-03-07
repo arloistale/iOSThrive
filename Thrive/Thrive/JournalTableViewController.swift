@@ -47,11 +47,13 @@ class JournalTableViewController: UITableViewController {
 
         let entry = journalEntries[indexPath.row]
         cell.photoImageView.image = entry.photo
-        cell.dateLabel.text = entry.getDateString()
+        cell.dateLabel.text = DateUtils.getPrettyLongDate(entry.date)
         let moodImage = entry.getMoodImage().imageWithRenderingMode(.AlwaysTemplate)
         cell.emoticonImageView.image = moodImage
         cell.emoticonImageView.tintColor = entry.getMoodColor()
-        cell.messageTextView.text = entry.message
+        if let message = entry.message {
+            cell.messageTextView.text = message
+        }
 
         return cell
     }

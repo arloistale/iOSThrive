@@ -1,19 +1,19 @@
 //
-//  JournalEntry.swift
+//  Card.swift
 //  Thrive
 //
-//  Created by Jonathan Lu on 1/27/16.
+//  Created by Jonathan Lu on 3/5/16.
 //  Copyright © 2016 UCSC OpenLab. All rights reserved.
 //
 
 import UIKit
 
-class JournalEntry: NSObject, NSCoding {
+class Card: NSObject, NSCoding {
     
     // Mark: Paths
     
     static let DocumentsDirectory = NSFileManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask).first!
-    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("journalEntries")
+    static let ArchiveURL = DocumentsDirectory.URLByAppendingPathComponent("cards")
     
     // MARK: Types
     
@@ -40,22 +40,26 @@ class JournalEntry: NSObject, NSCoding {
     
     struct PropertyKey {
         static let dateKey = "date"
-        static let messageKey = "message"
+        static let messageKey = "title"
         static let photoKey = "photo"
         static let moodKey = "mood"
     }
     
     // MARK: Properties
     
+    var thumbnail : UIImage?
+    var largeImage : UIImage?
+    
     var date: NSDate
-    var moodIndex: Int
     var message: String?
-    var photo: UIImage?
+    var moodIndex: Int
+    var photo: String?
     
     // MARK: Initialization
     
-    init?(date: NSDate, moodIndex: Int, message: String?, photo: UIImage?) {
+    init?(date: NSDate, moodIndex: Int, message: String?, photo: String?) {
         self.date = date
+        
         self.message = message
         self.moodIndex = moodIndex
         self.photo = photo
@@ -78,9 +82,9 @@ class JournalEntry: NSObject, NSCoding {
     
     required convenience init?(coder aDecoder: NSCoder) {
         let message = aDecoder.decodeObjectForKey(PropertyKey.messageKey) as! String
-        let photo = aDecoder.decodeObjectForKey(PropertyKey.photoKey) as? UIImage
+        let photo = aDecoder.decodeObjectForKey(PropertyKey.photoKey) as! String
         let date = aDecoder.decodeObjectForKey(PropertyKey.dateKey) as! NSDate
-        let moodIndex = aDecoder.decodeIntegerForKey(PropertyKey.moodKey);
+        let moodIndex = aDecoder.decodeIntegerForKey(PropertyKey.moodKey)
         
         self.init(date: date, moodIndex: moodIndex, message: message, photo: photo)
     }

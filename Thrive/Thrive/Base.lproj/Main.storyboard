@@ -43,7 +43,7 @@
                                                 <constraint firstAttribute="width" secondItem="dkr-Dz-h4g" secondAttribute="height" multiplier="1:1" id="ykY-Hl-Iqn"/>
                                             </constraints>
                                         </imageView>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="584" placeholderIntrinsicHeight="101.5" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K7i-KX-CHh">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="584" placeholderIntrinsicHeight="101.5" bounces="NO" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K7i-KX-CHh">
                                             <rect key="frame" x="8" y="90" width="584" height="101.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -108,10 +108,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="520" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="T5Q-de-jyN">
+                            <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="520" axis="vertical" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="T5Q-de-jyN">
                                 <rect key="frame" x="20" y="64" width="560" height="516"/>
                                 <subviews>
-                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="addActionPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="eM4-TY-h43">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="addActionPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="eM4-TY-h43">
                                         <rect key="frame" x="132" y="0.0" width="296" height="296"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -121,14 +121,14 @@
                                             <outletCollection property="gestureRecognizers" destination="UfO-En-wJ0" appends="YES" id="NgJ-d3-qOT"/>
                                         </connections>
                                     </imageView>
-                                    <view contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="IU5-DU-sM9" customClass="MoodControl" customModule="Thrive" customModuleProvider="target">
+                                    <view contentMode="scaleToFill" placeholderIntrinsicWidth="240" placeholderIntrinsicHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="IU5-DU-sM9" customClass="MoodControl" customModule="Thrive" customModuleProvider="target">
                                         <rect key="frame" x="160" y="308" width="240" height="43"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="43" id="dkh-qf-wcz"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="153" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="7gQ-Sh-sON">
+                                    <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="560" placeholderIntrinsicHeight="153" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="7gQ-Sh-sON">
                                         <rect key="frame" x="0.0" y="363" width="560" height="153"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Write a message..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdL-45-lzu">
@@ -299,16 +299,29 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UQk-gG-857">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                         </imageView>
+                                        <textView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="200" bounces="NO" scrollEnabled="NO" bouncesZoom="NO" editable="NO" text="Rise and shine motherfucker" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="jbM-HY-k86">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="jbM-HY-k86" firstAttribute="centerY" secondItem="WEK-Pa-2uj" secondAttribute="centerY" id="81C-ut-BX8"/>
                                     <constraint firstItem="UQk-gG-857" firstAttribute="leading" secondItem="WEK-Pa-2uj" secondAttribute="leading" id="HBM-3M-lDA"/>
+                                    <constraint firstItem="jbM-HY-k86" firstAttribute="centerX" secondItem="WEK-Pa-2uj" secondAttribute="centerX" id="J5K-o2-hj8"/>
+                                    <constraint firstAttribute="trailing" secondItem="jbM-HY-k86" secondAttribute="trailing" id="NvL-zJ-E8T"/>
+                                    <constraint firstItem="jbM-HY-k86" firstAttribute="leading" secondItem="WEK-Pa-2uj" secondAttribute="leading" id="QGc-qR-vu4"/>
                                     <constraint firstAttribute="trailing" secondItem="UQk-gG-857" secondAttribute="trailing" id="kOG-tS-gnm"/>
                                     <constraint firstAttribute="bottom" secondItem="UQk-gG-857" secondAttribute="bottom" id="sin-nT-WZT"/>
                                     <constraint firstItem="UQk-gG-857" firstAttribute="top" secondItem="WEK-Pa-2uj" secondAttribute="top" id="wxI-36-UMe"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="messageTextView" destination="jbM-HY-k86" id="GG9-GI-B0R"/>
                                     <outlet property="photoImageView" destination="UQk-gG-857" id="Slb-iG-s6f"/>
                                 </connections>
                             </collectionViewCell>

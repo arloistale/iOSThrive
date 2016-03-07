@@ -59,6 +59,7 @@ class JournalEntryViewController: UIViewController, UITextViewDelegate, UIImageP
     
     @IBAction func cancel(sender: AnyObject) {
         let isPresentingInAddMode = presentingViewController is UINavigationController
+        // TODO: Testing this
         if isPresentingInAddMode {
             dismissViewControllerAnimated(true, completion: nil)
         } else {
@@ -68,13 +69,13 @@ class JournalEntryViewController: UIViewController, UITextViewDelegate, UIImageP
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if sender === saveButton {
-            let message = messageTextView.text ?? ""
+            let message = messageTextView.text
             let photo = imageView.image
             let date = NSDate()
             let moodIndex = moodControl.getSelectedMoodIndex()
             
             // passed to table view
-            journalEntry = JournalEntry(date: date, message: message, moodIndex: moodIndex, photo: photo)
+            journalEntry = JournalEntry(date: date, moodIndex: moodIndex, message: message, photo: photo)
         }
     }
     

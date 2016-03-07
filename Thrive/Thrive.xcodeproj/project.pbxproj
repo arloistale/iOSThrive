@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		220DC78A1C878A9C00464ABF /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DC7891C878A9C00464ABF /* APIController.swift */; };
+		220DC78B1C878A9C00464ABF /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DC7891C878A9C00464ABF /* APIController.swift */; };
+		220DC78C1C878A9C00464ABF /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DC7891C878A9C00464ABF /* APIController.swift */; };
 		221CD0521C55CAA2007B6E58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221CD0511C55CAA2007B6E58 /* AppDelegate.swift */; };
 		221CD0571C55CAA2007B6E58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 221CD0551C55CAA2007B6E58 /* Main.storyboard */; };
 		221CD0591C55CAA2007B6E58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221CD0581C55CAA2007B6E58 /* Assets.xcassets */; };
@@ -29,6 +32,12 @@
 		22A0F37A1C8559A400CEB970 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A0F3791C8559A400CEB970 /* HomeViewController.swift */; };
 		22ABA6931C733C5A00BDAEAE /* CardCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ABA6921C733C5A00BDAEAE /* CardCollectionViewController.swift */; };
 		22B123A01C684D4800A7018E /* MoodControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1239F1C684D4800A7018E /* MoodControl.swift */; };
+		22D9FAB91C8BF91D00FD285A /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FAB81C8BF91D00FD285A /* DateUtils.swift */; };
+		22E358AB1C8BBBEE0086EA21 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E358AA1C8BBBEE0086EA21 /* Card.swift */; };
+		22FCD2C01C8D0E61005C3674 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E358AA1C8BBBEE0086EA21 /* Card.swift */; };
+		22FCD2C11C8D0E62005C3674 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E358AA1C8BBBEE0086EA21 /* Card.swift */; };
+		22FCD2C21C8D0E71005C3674 /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9FAB81C8BF91D00FD285A /* DateUtils.swift */; };
+		22FCD2C31C8D0E76005C3674 /* UIColorUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 227F269E1C7AD9E7009A349A /* UIColorUtils.swift */; };
 		B27125282E9AADEABB7A4BFA /* Pods_Thrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 479B3C9A3FA5E50B6738C89F /* Pods_Thrive.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		220DC7891C878A9C00464ABF /* APIController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
 		221CD04E1C55CAA2007B6E58 /* Thrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Thrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		221CD0511C55CAA2007B6E58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		221CD0561C55CAA2007B6E58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -72,6 +82,8 @@
 		22A0F3791C8559A400CEB970 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		22ABA6921C733C5A00BDAEAE /* CardCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewController.swift; sourceTree = "<group>"; };
 		22B1239F1C684D4800A7018E /* MoodControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoodControl.swift; sourceTree = "<group>"; };
+		22D9FAB81C8BF91D00FD285A /* DateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		22E358AA1C8BBBEE0086EA21 /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		317E54C5A88E784BD3F1F51A /* Pods-Thrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Thrive/Pods-Thrive.debug.xcconfig"; sourceTree = "<group>"; };
 		46DB3C52162CFDEE70AE75B6 /* Pods-Thrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Thrive.release.xcconfig"; path = "Pods/Target Support Files/Pods-Thrive/Pods-Thrive.release.xcconfig"; sourceTree = "<group>"; };
 		479B3C9A3FA5E50B6738C89F /* Pods_Thrive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Thrive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +155,9 @@
 				22747DDC1C73F284002BEB19 /* CardCollectionViewCell.swift */,
 				227F269E1C7AD9E7009A349A /* UIColorUtils.swift */,
 				22A0F3791C8559A400CEB970 /* HomeViewController.swift */,
+				22E358AA1C8BBBEE0086EA21 /* Card.swift */,
+				220DC7891C878A9C00464ABF /* APIController.swift */,
+				22D9FAB81C8BF91D00FD285A /* DateUtils.swift */,
 			);
 			path = Thrive;
 			sourceTree = "<group>";
@@ -364,15 +379,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22ABA6931C733C5A00BDAEAE /* CardCollectionViewController.swift in Sources */,
 				227F269F1C7AD9E7009A349A /* UIColorUtils.swift in Sources */,
 				221CD0521C55CAA2007B6E58 /* AppDelegate.swift in Sources */,
-				222F91581C67E2CB000EC3AA /* JournalEntryViewController.swift in Sources */,
+				22E358AB1C8BBBEE0086EA21 /* Card.swift in Sources */,
 				225DCC251C58CA1900FA3716 /* JournalEntry.swift in Sources */,
+				222F91581C67E2CB000EC3AA /* JournalEntryViewController.swift in Sources */,
+				22ABA6931C733C5A00BDAEAE /* CardCollectionViewController.swift in Sources */,
 				225DCC211C58C96000FA3716 /* JournalTableViewController.swift in Sources */,
 				225DCC1D1C58BDC100FA3716 /* JournalTableViewCell.swift in Sources */,
 				22A0F37A1C8559A400CEB970 /* HomeViewController.swift in Sources */,
+				220DC78A1C878A9C00464ABF /* APIController.swift in Sources */,
 				22B123A01C684D4800A7018E /* MoodControl.swift in Sources */,
+				22D9FAB91C8BF91D00FD285A /* DateUtils.swift in Sources */,
 				22747DDD1C73F284002BEB19 /* CardCollectionViewCell.swift in Sources */,
 				224FC7111C7395270080215C /* FlickrSearcher.swift in Sources */,
 			);
@@ -383,9 +401,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				225DCC1E1C58BDC100FA3716 /* JournalTableViewCell.swift in Sources */,
+				22FCD2C01C8D0E61005C3674 /* Card.swift in Sources */,
 				225DCC221C58C96000FA3716 /* JournalTableViewController.swift in Sources */,
+				22FCD2C31C8D0E76005C3674 /* UIColorUtils.swift in Sources */,
 				225DCC261C58CA1900FA3716 /* JournalEntry.swift in Sources */,
+				22FCD2C21C8D0E71005C3674 /* DateUtils.swift in Sources */,
 				221CD0671C55CAA2007B6E58 /* ThriveTests.swift in Sources */,
+				220DC78B1C878A9C00464ABF /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,9 +416,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				225DCC1F1C58BDC100FA3716 /* JournalTableViewCell.swift in Sources */,
+				22FCD2C11C8D0E62005C3674 /* Card.swift in Sources */,
 				225DCC231C58C96000FA3716 /* JournalTableViewController.swift in Sources */,
 				225DCC271C58CA1900FA3716 /* JournalEntry.swift in Sources */,
 				221CD0721C55CAA2007B6E58 /* ThriveUITests.swift in Sources */,
+				220DC78C1C878A9C00464ABF /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
